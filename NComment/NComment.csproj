@@ -46,9 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parsers\CommentsParser.cs" />
+    <Compile Include="Repositories\AssembliesCommentsRepository.cs" />
+    <Compile Include="Strings\IReferencableComment.cs" />
     <Compile Include="Strings\StringComment.cs" />
     <Compile Include="Strings\Paragraph.cs" />
     <Compile Include="Strings\Returns.cs" />
+    <Compile Include="Strings\StringCommentReference.cs" />
     <Compile Include="Strings\TypeParameter.cs" />
     <Compile Include="Comments\AssemblyCommentsCollection.cs" />
     <Compile Include="Comments\MemberComment.cs" />
@@ -72,6 +76,7 @@
   <ItemGroup>
     <None Include="Key.snk" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

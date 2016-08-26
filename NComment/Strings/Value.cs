@@ -8,6 +8,6 @@ namespace NComment.Strings
     /// <summary>
     /// Represents the description of the value that a property represents.
     /// </summary>
-    public class Value : StringComment
+    public class Value : StringComment, IReferencableComment
     { }
 }

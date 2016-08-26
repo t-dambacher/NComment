@@ -10,6 +10,5 @@ namespace NComment.Strings
     /// </summary>
     public class Summary : StringComment
     {
-
     }
 }

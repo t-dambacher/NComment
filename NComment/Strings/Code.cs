@@ -8,6 +8,6 @@ namespace NComment.Strings
     /// <summary>
     /// Represents a way to indicate multiple lines as code
     /// </summary>
-    public class Code : StringComment
+    public class Code : StringComment, IReferencableComment
     { }
 }

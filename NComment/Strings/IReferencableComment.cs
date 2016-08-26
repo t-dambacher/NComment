@@ -6,8 +6,10 @@ using System.Text;
 namespace NComment.Strings
 {
     /// <summary>
-    /// Represents a link from within comments
+    /// Interface of a comment that can be referenced within an other comment
     /// </summary>
-    public class See : Reference, IReferencableComment
-    { }
+    public interface IReferencableComment
+    {
+        //String Name { get; }
+    }
 }

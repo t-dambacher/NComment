@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NComment.Repositories;
+using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NComment
 {
@@ -24,7 +21,8 @@ namespace NComment
             if (type == null)
                 throw new ArgumentNullException("type");
 
-            return new TypeComment(type, null);   // todo
+            AssemblyCommentsCollection comments = new AssembliesCommentsRepository().Get(type.Assembly);
+            return comments[type];
         }
 
         /// <summary>
@@ -37,7 +35,11 @@ namespace NComment
             if (member == null)
                 throw new ArgumentNullException("member");
 
-            return new MemberComment(member, null);   // todo
+            TypeComment typeComment = GetXmlComment(member.DeclaringType);
+            if (typeComment == null)
+                return null;
+
+            return typeComment[member];
         }
     }
 }

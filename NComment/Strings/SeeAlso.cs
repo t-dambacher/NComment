@@ -8,6 +8,6 @@ namespace NComment.Strings
     /// <summary>
     /// Represents a link from within comments, in a See Also section
     /// </summary>
-    public class SeeAlso : See
+    public class SeeAlso : See, IReferencableComment
     { }
 }
