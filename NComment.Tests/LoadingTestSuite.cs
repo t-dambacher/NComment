@@ -3,6 +3,8 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NComment.Repositories;
 using System.Reflection;
+using NComment.Parsers;
+using System.IO;
 
 namespace NComment.Tests
 {
@@ -41,6 +43,28 @@ namespace NComment.Tests
         {
             AssemblyCommentsCollection comments = GetCommentsCollection(GetTestAssembly());
             Assert.IsTrue(comments.Types.Any(), "The test assembly comments have not been successfully loaded.");
+        }
+
+        /// <summary>
+        /// Asserts that the test assembly's comments file is found by the file resolver
+        /// </summary>
+        [TestMethod, TestCategory(CATEGORY)]
+        public void Assert_TestAssembly_CommentsFile_Is_Found()
+        {
+            CommentsFileResolver fileResolver = new CommentsFileResolver(GetTestAssembly());
+            FileInfo commentsFile = fileResolver.ResolveCommentsFile();
+            Assert.IsNotNull(commentsFile, "The file resolver did not found the test assembly's XML comment file.");
+        }
+
+        /// <summary>
+        /// Asserts that the test assembly's comments file is found by the file resolver
+        /// </summary>
+        [TestMethod, TestCategory(CATEGORY)]
+        public void Assert_DotNetFramework_CommentsFile_Is_Found()
+        {
+            CommentsFileResolver fileResolver = new CommentsFileResolver(GetSystemAssembly());
+            FileInfo commentsFile = fileResolver.ResolveCommentsFile();
+            Assert.IsNotNull(commentsFile, "The file resolver did not found the System assembly's XML comment file.");
         }
 
         /// <summary>

@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parsers\CommentsFileResolver.cs" />
     <Compile Include="Parsers\CommentsParser.cs" />
     <Compile Include="Repositories\AssembliesCommentsRepository.cs" />
     <Compile Include="Strings\IReferencableComment.cs" />

@@ -19,5 +19,14 @@ namespace NComment.Tests
         {
             return Assembly.GetExecutingAssembly();
         }
+
+        /// <summary>
+        /// Returns the System assembly
+        /// </summary>
+        /// <returns>System assembly</returns>
+        protected Assembly GetSystemAssembly()
+        {
+            return typeof(Int32).Assembly;
+        }
     }
 }

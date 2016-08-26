@@ -21,17 +21,10 @@ namespace NComment.Repositories
         private static readonly Dictionary<Assembly, AssemblyCommentsCollection> _cache = new Dictionary<Assembly, AssemblyCommentsCollection>();
 
         /// <summary>
-        /// Parser of comments
-        /// </summary>
-        private readonly CommentsParser _parser;
-
-        /// <summary>
         /// Creates a new instance of a AssembliesCommentsRepository
         /// </summary>
         public AssembliesCommentsRepository()
-        {
-            this._parser = new CommentsParser();
-        }
+        { }
 
         /// <summary>
         /// Retrieves the comments collection for a given assembly
@@ -45,7 +38,7 @@ namespace NComment.Repositories
             // Tries to get the result from the cache
             if (!_cache.TryGetValue(assembly, out res))
             {
-                res = _parser.Parse(assembly);
+                res = new CommentsParser(assembly).Parse();
 
                 // If the parser returns nothing (ie, no comments file is found), we create a empty collection and store it in the cache
                 if (res == null)
