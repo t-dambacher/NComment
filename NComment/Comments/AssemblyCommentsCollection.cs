@@ -47,6 +47,7 @@ namespace NComment
         /// Creates a new instance of an AssemblyCommentsCollection
         /// </summary>
         /// <param name="referencedAssembly">Assembly which we want the comments for</param>
+        /// <param name="comments">List of the TypeComments associed with the <paramref name="referencedAssembly"/></param>
         internal AssemblyCommentsCollection(Assembly referencedAssembly, IEnumerable<TypeComment> comments)
         {
             if (referencedAssembly == null)

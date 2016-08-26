@@ -7,6 +7,9 @@ using NComment.Strings;
 
 namespace NComment
 {
+    /// <summary>
+    /// Base class representing a comment
+    /// </summary>
     public abstract class Comment
     {
         /// <summary>

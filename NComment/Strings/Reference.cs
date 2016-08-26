@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NComment.Strings
 {
+    /// <summary>
+    /// Base class for a reference comment
+    /// </summary>
     public abstract class Reference : StringComment
     { }
 }

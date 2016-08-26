@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -20,5 +21,7 @@ namespace NComment.Parsers
         {
             return null;   // todo tda
         }
+
+       // private FileInfo Resolve
     }
 }
